@@ -66,7 +66,7 @@ router.patch('/users/me', auth, async (req, res) => {
         return res.status(400).send({ error: 'Invalid Updates!' });
     }
 
-    try { 
+    try {
         updates.forEach((update) => req.user[update] = req.body[update])
         await req.user.save();
 
@@ -95,15 +95,38 @@ const upload = multer({
             return cb(new Error('File type must be either jpg, jpeg or png.'));
         }
 
-        cb(undefined, true); 
+        cb(undefined, true);
     }
 })
-router.post('/users/me/avatar', auth, upload.single('avatar'), async (req,res) => {
+router.post('/users/me/avatar', auth, upload.single('avatar'), async (req, res) => {
     req.user.avatar = req.file.buffer
     await req.user.save()
     res.send();
 }, (error, req, res, next) => {
-    res.status(400).send({ error: error.message }); 
+    res.status(400).send({ error: error.message });
+})
+
+router.delete('/users/me/avatar', auth, async (req, res) => {
+    req.user.avatar = undefined;
+    await req.user.save();
+    res.send();
+}, (err, req, res, next) => {
+    res.status(400).send({ error: err.message })
+})
+
+router.get('/users/:id/avatar', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id)
+
+        if (!user || !user.avatar) {
+            throw new Error()
+        }
+
+        res.set('Content-Type', 'image/jpg')
+        res.send(user.avatar);
+    } catch (err) {
+        res.status(404).send();
+    }
 })
 
 
