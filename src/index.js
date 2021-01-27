@@ -3,6 +3,8 @@ require('./db/mongoose');
 const userRouter = require('./routers/user');
 const taskRouter = require('./routers/task');
 
+//SendGrid API Key = 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  
+
 const app = express();
 const port = process.env.PORT || 3000;
 
