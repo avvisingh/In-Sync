@@ -1,6 +1,6 @@
 import "../Styles/Login.css";
 import { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -42,7 +42,7 @@ const Login = () => {
         />
         <label>Password:</label>
         <input
-          type="text"
+          type="password"
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -50,6 +50,10 @@ const Login = () => {
         {!isPending && <button>Login</button>}
         {isPending && <button disabled>Logging In...</button>}
       </form>
+      <p>Don't have an Account yet?</p>
+      <p>
+        Sign Up <Link to="/newUser">here</Link>!
+      </p>
     </div>
   );
 };
