@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import NewUser from "./Pages/NewUser";
 import TaskList from "./Pages/TaskList";
 import TaskDetails from "./Pages/TaskDetails";
+import CreateTask from "./Pages/CreateTask";
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
               <Route path="/tasks/:id">
                 <Navbar />
                 <TaskDetails />
+              </Route>
+              <Route path="/createtask">
+                <Navbar />
+                <CreateTask />
               </Route>
               {/* <Route exact path="/myprofile">
                 <Home />
