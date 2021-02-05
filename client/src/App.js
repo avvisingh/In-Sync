@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import NewUser from "./Pages/NewUser";
 import TaskList from "./Pages/TaskList";
+import TaskDetails from "./Pages/TaskDetails";
 
 function App() {
   return (
@@ -23,8 +24,11 @@ function App() {
                 <Home />
               </Route>
               <Route exact path="/tasks">
+                <Navbar />
                 <TaskList />
-                <Home />
+              </Route>
+              <Route path="/tasks/:id">
+                <TaskDetails />
               </Route>
               {/* <Route exact path="/myprofile">
                 <Home />
