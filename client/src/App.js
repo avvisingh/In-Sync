@@ -28,6 +28,7 @@ function App() {
                 <TaskList />
               </Route>
               <Route path="/tasks/:id">
+                <Navbar />
                 <TaskDetails />
               </Route>
               {/* <Route exact path="/myprofile">
