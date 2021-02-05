@@ -1,5 +1,6 @@
 import "../Styles/NewUser.css";
 import { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 const NewUser = () => {
   const [name, setName] = useState("");
@@ -7,6 +8,7 @@ const NewUser = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPending, setIsPending] = useState(false);
+  const [newUserCreated, setNewUserCreated] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,9 +19,12 @@ const NewUser = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
     })
-      .then(() => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log("New user added");
         setIsPending(false);
+        setNewUserCreated(true);
+        localStorage.setItem("auth-token", data.token);
       })
       .catch((e) => {
         console.log(e.message);
@@ -60,6 +65,7 @@ const NewUser = () => {
         />
         {!isPending && <button>Complete Registration</button>}
         {isPending && <button disabled>Creating Your Account..</button>}
+        {newUserCreated && <Redirect to="/" />}
       </form>
     </div>
   );
