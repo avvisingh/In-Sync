@@ -20,8 +20,10 @@ const Login = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
     })
-      .then(() => {
-        console.log("User login details sent");
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("auth-token", data.token);
         setIsPending(false);
       })
       .catch((e) => {

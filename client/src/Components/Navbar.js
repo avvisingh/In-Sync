@@ -1,14 +1,15 @@
 import "../Styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="topnav">
-      <a className="active" href="#home">
+      <Link className="active" to="/">
         Home
-      </a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      </Link>
+      <Link to="/myprofile">Your Profile</Link>
+      <Link to="/">Contact</Link>
+      <Link to="/">About</Link>
     </div>
   );
 };
