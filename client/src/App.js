@@ -12,15 +12,18 @@ function App() {
           <Navbar />
           <div className="content">
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/login">
                 <Login />
+              </Route>
+              <Route exact path="/">
+                <Home />
               </Route>
               <Route exact path="/newUser">
                 <NewUser />
               </Route>
-              <Route exact path="/myprofile">
+              {/* <Route exact path="/myprofile">
                 <Home />
-              </Route>
+              </Route> */}
             </Switch>
           </div>
         </div>

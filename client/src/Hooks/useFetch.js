@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);
@@ -17,7 +18,9 @@ const useFetch = (url) => {
     })
       .then((res) => {
         if (!res.ok) {
-          throw Error("Data retreival failed. Please try again");
+          throw Error(
+            "Unable to fetch your details. We apologise for the inconvenience"
+          );
         }
         return res.json();
       })
@@ -25,6 +28,7 @@ const useFetch = (url) => {
         setData(receivedData);
         setIsPending(false);
         setError(null);
+        <Redirect to="/" />;
       })
       .catch((e) => {
         if (e.name === "AbortError") {
@@ -34,6 +38,7 @@ const useFetch = (url) => {
         setData(null);
         setIsPending(false);
         setError(e.message);
+        <Redirect to="/login" />;
       });
 
     return () => abortController.abort();
