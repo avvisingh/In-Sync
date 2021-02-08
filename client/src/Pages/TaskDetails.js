@@ -4,6 +4,7 @@ import useFetch from "../Hooks/useFetch";
 
 const TaskDetails = () => {
   const [isDeleted, setIsDeleted] = useState(false);
+  const [updateClicked, setUpdateClicked] = useState(false);
   const { id } = useParams();
   const { data: task, error, isPending } = useFetch(
     "http://localhost:8080/tasks/" + id
@@ -22,6 +23,27 @@ const TaskDetails = () => {
     });
   };
 
+  const handleUpdateClick = () => {
+    const completed = {
+      completed: "true",
+    };
+
+    fetch(`http://localhost:8080/tasks/${task._id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ completed: "true" }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("auth-token")}`,
+      },
+    })
+      .then(() => {
+        setUpdateClicked(true);
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  };
+
   return (
     <div className="blog-details">
       {isPending && <div>Loading...</div>}
@@ -32,6 +54,8 @@ const TaskDetails = () => {
           <p>This task has been completed: {task.completed.toString()}</p>
           <button onClick={handleClick}>Delete</button>
           {isDeleted && <Redirect to="/tasks" />}
+          <button onClick={handleUpdateClick}>Update to Completed</button>
+          {updateClicked && <Redirect to="/tasks" />}
         </article>
       )}
     </div>
