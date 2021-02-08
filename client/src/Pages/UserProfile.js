@@ -3,13 +3,6 @@ import Logout from "../Components/Logout";
 
 const UserProfile = ({ user, title }) => {
   let imgSource = `http://localhost:8080/users/${user._id}/avatar`;
-  // let avatar;
-  // fetch(`http://localhost:8080/users/${user._id}/avatar`)
-  //   .then((res) => {
-  //     const avatar = res;
-  //     console.log(res.json());
-  //   })
-  //   .catch((e) => console.error(e.message));
 
   return (
     <div className="profile-container">
