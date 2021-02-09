@@ -33,32 +33,36 @@ const Login = () => {
       });
   };
   return (
-    <div className="login">
-      <h2>Already have an account?</h2>
-      <h4>Sign-in below!</h4>
-      <form onSubmit={handleSubmit}>
-        <label>Email:</label>
-        <input
-          type="text"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {!isPending && <button>Login</button>}
-        {isPending && <button disabled>Logging In...</button>}
-        {isLoggedIn && <Redirect to="/" />}
-      </form>
-      <p>Don't have an Account yet?</p>
-      <p>
-        Sign Up <Link to="/newUser">here</Link>!
-      </p>
+    <div className="containing">
+      <div className="login">
+        <h2>Already have an account?</h2>
+        <h4>Sign-in below!</h4>
+        <form onSubmit={handleSubmit}>
+          <label className="email-label">Email:</label>
+          <input
+            className="email-input"
+            type="text"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label className="password-label">Password:</label>
+          <input
+            className="password-input"
+            type="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {!isPending && <button>Login</button>}
+          {isPending && <button disabled>Logging In...</button>}
+          {isLoggedIn && <Redirect to="/" />}
+        </form>
+        <p>Don't have an Account yet?</p>
+        <p>
+          Sign Up <Link to="/newUser">here</Link>!
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,31 @@
+.containing {
+  margin-top: 10%;
+}
+
+.login {
+  padding: 2.5%;
+  margin: auto;
+  text-align: center;
+  background-color: aquamarine;
+  width: 50%;
+  border: 5px solid #f5ce20;
+  border-radius: 15px;
+}
+
+form {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-label,
+.email-input,
+.password-label,
+.password-input {
+  margin: 1% auto;
+}
+
+button {
+  margin-top: 1%;
+}
