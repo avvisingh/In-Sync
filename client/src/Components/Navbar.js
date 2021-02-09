@@ -1,5 +1,6 @@
 import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
+import Logout from "../Components/Logout";
 
 const Navbar = () => {
   return (
@@ -10,6 +11,7 @@ const Navbar = () => {
       <Link to="/tasks">Your Tasks</Link>
       <Link to="/createtask">Add a new task</Link>
       <Link to="/">About</Link>
+      <Logout />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import "../Styles/UserProfile.css";
-import Logout from "../Components/Logout";
 
 const UserProfile = ({ user, title }) => {
   let imgSource = `http://localhost:8080/users/${user._id}/avatar`;
@@ -10,7 +9,6 @@ const UserProfile = ({ user, title }) => {
         <h2>{title}</h2>
         <div className="name">User Name: {user.name}</div>
         <div className="age">User Age: {user.age}</div>
-        <Logout />
       </div>
       <div className="user-avatar">
         <img src={imgSource} className="avatar" alt="User's profile" />
