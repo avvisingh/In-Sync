@@ -1,0 +1,16 @@
+.profile-container {
+  text-align: center;
+  background-color: aquamarine;
+  width: 90%;
+  margin: 2% auto;
+  border-radius: 10%;
+}
+
+.user-info {
+  float: left;
+  margin-left: 10%;
+}
+
+.avatar {
+  margin-right: 2%;
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const Logout = () => {
   const [isLoggedOut, setIsLoggedOut] = useState(false);

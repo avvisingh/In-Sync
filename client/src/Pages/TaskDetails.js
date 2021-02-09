@@ -1,4 +1,4 @@
-import { Redirect, useHistory, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { useState } from "react";
 import useFetch from "../Hooks/useFetch";
 
@@ -24,10 +24,6 @@ const TaskDetails = () => {
   };
 
   const handleUpdateClick = () => {
-    const completed = {
-      completed: "true",
-    };
-
     fetch(`http://localhost:8080/tasks/${task._id}`, {
       method: "PATCH",
       body: JSON.stringify({ completed: "true" }),

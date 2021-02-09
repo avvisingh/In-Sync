@@ -6,11 +6,13 @@ const UserProfile = ({ user, title }) => {
 
   return (
     <div className="profile-container">
-      <h2>{title}</h2>
-      <div className="name">{user.name}</div>
-      <div className="age">{user.age}</div>
-      <img src={imgSource} className="avatar" />
-      <Logout />
+      <div className="user-info">
+        <h2>{title}</h2>
+        <div className="name">{user.name}</div>
+        <div className="age">{user.age}</div>
+        <Logout />
+      </div>
+      <img src={imgSource} className="avatar" alt="User's profile" />
     </div>
   );
 };
