@@ -1,0 +1,28 @@
+.containing {
+  margin-top: 8%;
+}
+
+.task-list {
+  margin: auto;
+  width: 40%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  background-color: aquamarine;
+  border: 5px solid #f5ce20;
+  border-radius: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+a:link,
+a:visited {
+  color: #21211f;
+}
+a:hover {
+  color: #f5ce20;
+}
