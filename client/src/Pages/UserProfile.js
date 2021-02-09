@@ -8,8 +8,8 @@ const UserProfile = ({ user, title }) => {
     <div className="profile-container">
       <div className="user-info">
         <h2>{title}</h2>
-        <div className="name">{user.name}</div>
-        <div className="age">{user.age}</div>
+        <div className="name">User Name: {user.name}</div>
+        <div className="age">User Age: {user.age}</div>
         <Logout />
       </div>
       <div className="user-avatar">
