@@ -12,7 +12,9 @@ const UserProfile = ({ user, title }) => {
         <div className="age">{user.age}</div>
         <Logout />
       </div>
-      <img src={imgSource} className="avatar" alt="User's profile" />
+      <div className="user-avatar">
+        <img src={imgSource} className="avatar" alt="User's profile" />
+      </div>
     </div>
   );
 };

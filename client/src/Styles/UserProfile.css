@@ -1,12 +1,22 @@
 .profile-container {
   text-align: center;
   background-color: aquamarine;
-  width: 90%;
+  width: 80%;
   margin: 2% auto;
-  border-radius: 10%;
+  border: 5px solid #f5ce20;
+  border-radius: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.profile-container > .user-info {
+  flex: 3;
+}
+
+.user-avatar {
+  margin-right: 5%;
+  padding: 2%;
 }
 
 .user-info {
@@ -17,4 +27,5 @@
   float: right;
   height: 200px;
   width: 200px;
+  object-fit: contain;
 }
