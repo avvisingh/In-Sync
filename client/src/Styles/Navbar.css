@@ -1,6 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: #f5ce20;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -12,7 +12,8 @@
 
 .topnav a,
 .logout-button {
-  color: #f2f2f2;
+  color: #696556;
+  text-emphasis: emphasis;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -21,11 +22,11 @@
 
 .topnav a:hover,
 .logout-button:hover {
-  background-color: #ddd;
+  background-color: rgba(245, 206, 32, 0.4);
   color: black;
 }
 
 .topnav a.active {
-  background-color: #4caf50;
-  color: white;
+  background-color: aquamarine;
+  color: #696556;
 }
