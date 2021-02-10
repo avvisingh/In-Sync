@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
+import "../Styles/CreateTask.css";
 
 const CreateTask = () => {
   const [description, setDescription] = useState("");
@@ -28,17 +29,21 @@ const CreateTask = () => {
   return (
     <div className="create">
       <h2>Add a New Task</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Task Description:</label>
-        <textarea
-          required
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
-        {!isPending && <button>Add Task</button>}
-        {isPending && <button disabled>Adding Task...</button>}
-        {isAdded && <Redirect to="/tasks" />}
-      </form>
+      <div className="containing">
+        <div className="form-div">
+          <form onSubmit={handleSubmit}>
+            <label>Task Description:</label>
+            <textarea
+              required
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+            {!isPending && <button>Add Task</button>}
+            {isPending && <button disabled>Adding Task...</button>}
+            {isAdded && <Redirect to="/tasks" />}
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
