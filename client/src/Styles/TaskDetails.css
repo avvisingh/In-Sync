@@ -1,0 +1,21 @@
+.containing {
+  margin-top: 10%;
+}
+
+.task-details {
+  margin: auto;
+  padding: 2.5%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+  border: 5px solid #f5ce20;
+  border-radius: 15px;
+  width: 30%;
+}
+
+.delete-button,
+.update-button {
+  display: block;
+  margin: 2% auto;
+}

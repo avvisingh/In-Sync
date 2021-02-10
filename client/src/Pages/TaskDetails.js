@@ -1,6 +1,7 @@
 import { Redirect, useParams } from "react-router-dom";
 import { useState } from "react";
 import useFetch from "../Hooks/useFetch";
+import "../Styles/TaskDetails.css";
 
 const TaskDetails = () => {
   const [isDeleted, setIsDeleted] = useState(false);
@@ -41,19 +42,25 @@ const TaskDetails = () => {
   };
 
   return (
-    <div className="blog-details">
-      {isPending && <div>Loading...</div>}
-      {error && <div>{error}</div>}
-      {task && (
-        <article>
-          <div>{task.description}</div>
-          <p>This task has been completed: {task.completed.toString()}</p>
-          <button onClick={handleClick}>Delete</button>
-          {isDeleted && <Redirect to="/tasks" />}
-          <button onClick={handleUpdateClick}>Update to Completed</button>
-          {updateClicked && <Redirect to="/tasks" />}
-        </article>
-      )}
+    <div className="containing">
+      <div className="task-details">
+        {isPending && <div>Loading...</div>}
+        {error && <div>{error}</div>}
+        {task && (
+          <article>
+            <h2>{task.description}</h2>
+            <p>This task has been completed: {task.completed.toString()}</p>
+            <button className="delete-button" onClick={handleClick}>
+              Delete
+            </button>
+            {isDeleted && <Redirect to="/tasks" />}
+            <button className="update-button" onClick={handleUpdateClick}>
+              Update to Completed
+            </button>
+            {updateClicked && <Redirect to="/tasks" />}
+          </article>
+        )}
+      </div>
     </div>
   );
 };
