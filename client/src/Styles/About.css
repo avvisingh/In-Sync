@@ -1,0 +1,19 @@
+.containing {
+  margin-top: 10%;
+}
+
+.about {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+  width: 40%;
+  padding: 2.5%;
+  border: 5px solid #f5ce20;
+  border-radius: 15px;
+}
+
+.git-link {
+  border-bottom: orangered 0.1em solid;
+}

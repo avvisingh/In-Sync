@@ -7,6 +7,7 @@ import NewUser from "./Pages/NewUser";
 import TaskList from "./Pages/TaskList";
 import TaskDetails from "./Pages/TaskDetails";
 import CreateTask from "./Pages/CreateTask";
+import About from "./Pages/About";
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
             <Route path="/createtask">
               <Navbar />
               <CreateTask />
+            </Route>
+            <Route path="/about">
+              <Navbar />
+              <About />
             </Route>
             {/* <Route exact path="/myprofile">
                 <Home />

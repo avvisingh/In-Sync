@@ -10,7 +10,7 @@ const Navbar = () => {
       </Link>
       <Link to="/tasks">Your Tasks</Link>
       <Link to="/createtask">Add a new task</Link>
-      <Link to="/">About</Link>
+      <Link to="/about">About</Link>
       <Logout />
     </div>
   );
