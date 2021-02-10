@@ -54,9 +54,11 @@ const TaskDetails = () => {
               Delete
             </button>
             {isDeleted && <Redirect to="/tasks" />}
-            <button className="update-button" onClick={handleUpdateClick}>
-              Update to Completed
-            </button>
+            {task.completed.toString() === "false" && (
+              <button className="update-button" onClick={handleUpdateClick}>
+                Update to Completed
+              </button>
+            )}
             {updateClicked && <Redirect to="/tasks" />}
           </article>
         )}
