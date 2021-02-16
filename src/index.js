@@ -12,6 +12,10 @@ app.use(express.json()); //Setting This line means express will automatically pa
 app.use(userRouter);
 app.use(taskRouter);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 app.listen(port, () => {
   console.log("Server is up on port " + port);
 });
