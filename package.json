@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
     "server": "env-cmd -f ./config/dev.env node src/index.js",
     "client": "cd client && npm run start",
