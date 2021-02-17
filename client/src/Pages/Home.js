@@ -3,7 +3,7 @@ import useFetch from "../Hooks/useFetch";
 import { Redirect } from "react-router-dom";
 
 const Home = () => {
-  const { data, isPending, error } = useFetch("http://localhost:8080/users/me");
+  const { data, isPending, error } = useFetch("/users/me");
 
   return (
     <div className="profile">

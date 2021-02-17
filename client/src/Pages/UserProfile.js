@@ -1,7 +1,7 @@
 import "../Styles/UserProfile.css";
 
 const UserProfile = ({ user, title }) => {
-  let imgSource = `http://localhost:8080/users/${user._id}/avatar`;
+  let imgSource = `/users/${user._id}/avatar`;
 
   return (
     <div className="profile-container">

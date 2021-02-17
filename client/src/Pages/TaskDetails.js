@@ -7,12 +7,10 @@ const TaskDetails = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [updateClicked, setUpdateClicked] = useState(false);
   const { id } = useParams();
-  const { data: task, error, isPending } = useFetch(
-    "http://localhost:8080/tasks/" + id
-  );
+  const { data: task, error, isPending } = useFetch("/tasks/" + id);
 
   const handleClick = () => {
-    fetch("http://localhost:8080/tasks/" + task._id, {
+    fetch("/tasks/" + task._id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -25,7 +23,7 @@ const TaskDetails = () => {
   };
 
   const handleUpdateClick = () => {
-    fetch(`http://localhost:8080/tasks/${task._id}`, {
+    fetch(`/tasks/${task._id}`, {
       method: "PATCH",
       body: JSON.stringify({ completed: "true" }),
       headers: {

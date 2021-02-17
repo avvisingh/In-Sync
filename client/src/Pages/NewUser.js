@@ -14,7 +14,7 @@ const NewUser = () => {
     e.preventDefault();
     const newUser = { name, email, password, age };
 
-    fetch("http://localhost:8080/users", {
+    fetch("/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),

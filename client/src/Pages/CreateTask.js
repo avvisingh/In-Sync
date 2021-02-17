@@ -13,7 +13,7 @@ const CreateTask = () => {
 
     setIsPending(true);
 
-    fetch("http://localhost:8080/tasks", {
+    fetch("/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

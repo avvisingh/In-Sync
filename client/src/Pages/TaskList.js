@@ -2,7 +2,7 @@ import Tasks from "./Tasks";
 import useFetch from "../Hooks/useFetch";
 
 const TaskList = () => {
-  const { data, isPending, error } = useFetch("http://localhost:8080/tasks");
+  const { data, isPending, error } = useFetch("/tasks");
 
   return (
     <div className="tasks">
